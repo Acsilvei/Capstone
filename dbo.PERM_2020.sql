@@ -11,7 +11,9 @@ RUNTIME:
 Approx. 1 min 30 sec
 
 NOTES:
-This table uses info contained in the source table dbo.PERM_FY2020Q4$ which was extracted from the website . It adds a PK to the table (INDEX), reduces the number of columns from 154 in the table source to 28 columns. The script alo includes the Drop statement and the load statement, which allow the same script to be run several times without error.
+This table uses info contained in the source table dbo.PERM_FY2020Q4$ which was extracted from the website https://www.dol.gov/agencies/eta/foreign-labor/performance.
+It adds a PK to the table (INDEX), reduces the number of columns from 154 in the table source to 28 columns. 
+The script alo includes the Drop statement and the load statement, which allow the same script to be run several times without error.
  
 LICENSE: This code is covered by the GNU General Public License which guarantees end users
 the freedom to run, study, share, and modify the code. This license grants the recipients
@@ -52,6 +54,10 @@ CREATE TABLE [dbo].[PERM_2020](
 	[EMPLOYER_YEAR_COMMENCED_BUSINESS] [float] NULL,
 	[NAICS_CODE] [float] NULL,
 	[AGENT_ATTORNEY_FIRM_NAME] [nvarchar](255) NULL,
+	[PW_SOC_CODE] [nvarchar](255) NULL,
+	[PW_SOC_TITLE] [nvarchar](255) NULL,
+	[PW_SKILL_LEVEL] [nvarchar](255) NULL,
+	[PW_WAGE] [money] NULL,
 	[WORKSITE_CITY] [nvarchar](255) NULL,
 	[WORKSITE_STATE] [nvarchar](255) NULL,
 	[JOB_TITLE] [nvarchar](255) NULL,
@@ -86,6 +92,10 @@ SELECT DISTINCT
 	[EMPLOYER_YEAR_COMMENCED_BUSINESS],
 	[NAICS_CODE],
 	[AGENT_ATTORNEY_FIRM_NAME],
+	[PW_SOC_CODE],
+	[PW_SOC_TITLE],
+	[PW_SKILL_LEVEL],
+	[PW_WAGE] [money],
 	[WORKSITE_CITY],
 	[WORKSITE_STATE],
 	[JOB_TITLE],
